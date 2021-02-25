@@ -13,7 +13,7 @@ const CourseCard = ({ course, updateCourse, deleteCourse }) => {
     }
 
     return (
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+        <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
             <div className="card w-100 w-sm-50">
                 <img src="https://cdn.pixabay.com/photo/2015/05/31/15/07/business-792113_960_720.jpg" className="card-img-top" alt="placeholder" />
                 <div className="card-body">
@@ -25,7 +25,7 @@ const CourseCard = ({ course, updateCourse, deleteCourse }) => {
                             : <h5 className="card-title d-inline-block">{title}</h5>
                         }
                         {isEditable ?
-                            <div class="d-flex">
+                            <div className="d-flex">
                                 <button className="btn btn-link" onClick={saveCourse}>
                                     <i className="fa fa-check text-success"></i>
                                 </button>
