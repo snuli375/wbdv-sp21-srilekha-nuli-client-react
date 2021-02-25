@@ -1,7 +1,8 @@
 import React from 'react'
 import CourseRow from './course-row.js'
+import { Link } from 'react-router-dom'
 
-const CourseTable = ({ setFormat, courses, deleteCourse, updateCourse }) => {
+const CourseTable = ({ courses, deleteCourse, updateCourse }) => {
     return (<table className="table">
         <thead>
             <tr>
@@ -12,7 +13,9 @@ const CourseTable = ({ setFormat, courses, deleteCourse, updateCourse }) => {
                     <div className="d-flex justify-content-end">
                         <i className="fa fa-folder mr-2"></i>
                         <i className="fas fa-sort-alpha-up mr-2"></i>
-                        <i className="fa fa-th" onClick={() => setFormat(true)}></i>
+                        <Link to="/grid">
+                            <i className="fa fa-th"></i>
+                        </Link>
                     </div>
 
                 </th>

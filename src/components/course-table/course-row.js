@@ -19,7 +19,7 @@ const CourseRow = ({ course, updateCourse, deleteCourse }) => {
                 <input className="form-control"
                     onChange={(e) => setTitle(e.target.value)}
                     ref={courseInput} aria-label="Course Name" value={title}></input>
-                : <Link to="/editor">{title}</Link>}
+                : <Link to={`/editor/${course._id}`}>{title}</Link>}
         </td>
         <td className="d-none d-sm-table-cell">{course.owner}</td>
         <td className="d-none d-lg-table-cell">{course.modified}</td>
@@ -39,7 +39,6 @@ const CourseRow = ({ course, updateCourse, deleteCourse }) => {
                     </button>
                 </div>
             }
-
         </td>
     </tr>)
 }

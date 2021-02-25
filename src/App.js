@@ -7,9 +7,8 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" exact component={CourseManager}>
-        </Route>
         <Route path="/editor" component={CourseEditor} />
+        <Route path="/" component={CourseManager} />
         <Route>Wrong page!</Route>
       </Switch>
     </BrowserRouter>

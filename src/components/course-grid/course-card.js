@@ -39,7 +39,7 @@ const CourseCard = ({ course, updateCourse, deleteCourse }) => {
                         }
                     </div>
                     <p className="card-text">Last modified: {course.modified}</p>
-                    <Link to="editor" className="btn btn-primary">{title}</Link>
+                    <Link to={`/editor/${course._id}`} className="btn btn-primary">{title}</Link>
                 </div>
             </div>
         </div >

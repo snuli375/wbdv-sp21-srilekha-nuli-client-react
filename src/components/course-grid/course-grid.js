@@ -1,7 +1,8 @@
 import React from 'react'
 import CourseCard from './course-card.js'
+import { Link } from 'react-router-dom'
 
-const CourseGrid = ({ courses, updateCourse, deleteCourse, setFormat }) => {
+const CourseGrid = ({ courses, updateCourse, deleteCourse }) => {
     return (
         <div>
             <div class="row mb-4 align-items-baseline">
@@ -17,7 +18,9 @@ const CourseGrid = ({ courses, updateCourse, deleteCourse, setFormat }) => {
                 <div class="col-12 col-sm-4 d-flex justify-content-end">
                     <i className="fa fa-folder mr-2"></i>
                     <i className="fas fa-sort-alpha-up mr-2"></i>
-                    <i className="fa fa-th" onClick={() => setFormat(false)}></i>
+                    <Link to="/table">
+                        <i className="fa fa-list"></i>
+                    </Link>
                 </div>
 
             </div>
