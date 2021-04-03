@@ -22,7 +22,7 @@ const CourseCard = ({ course, updateCourse, deleteCourse }) => {
                             <input className="form-control d-inline-block" ref={courseInput}
                                 onChange={(e) => setTitle(e.target.value)}
                                 aria-label="Course Name" placeholder="Course Name" value={title}></input>
-                            : <h5 className="card-title d-inline-block">{title}</h5>
+                            : <h5 className="card-title d-inline-block"><Link to={`grid/editor/${course._id}`}>{title}</Link></h5>
                         }
                         {isEditable ?
                             <div className="d-flex">
@@ -39,7 +39,7 @@ const CourseCard = ({ course, updateCourse, deleteCourse }) => {
                         }
                     </div>
                     <p className="card-text">Last modified: {course.modified}</p>
-                    <Link to={`/editor/${course._id}`} className="btn btn-primary">{title}</Link>
+                    <Link to={`grid/editor/${course._id}`} className="btn btn-primary">{title}</Link>
                 </div>
             </div>
         </div >

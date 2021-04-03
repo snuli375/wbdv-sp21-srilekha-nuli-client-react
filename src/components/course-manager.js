@@ -2,11 +2,12 @@ import { useEffect, useState, useRef } from 'react';
 import CourseTable from './course-table/course-table.js'
 import CourseGrid from './course-grid/course-grid.js'
 import courseService from '../services/course-service'
-import { Route, Redirect } from 'react-router-dom'
+import { Route, useParams } from 'react-router-dom'
 
 const CourseManager = () => {
     const [courses, setCourses] = useState([])
     const courseInput = useRef(null);
+    const { layout } = useParams();
 
     useEffect(() => {
         courseService.findAllCourses()
@@ -57,13 +58,8 @@ const CourseManager = () => {
                     <i className="fa fa-plus-circle fa-lg text-danger" ></i>
                 </button>
             </nav>
-            <Route path="/grid">
-                <CourseGrid {...props} />
-            </Route>
-            <Route path="/table">
-                <CourseTable {...props} />
-            </Route>
-            <Route path="/" exact render={() => (<Redirect to="/table" />)} />
+            <Route path=":layout/" />
+            {layout === "grid" ? <CourseGrid {...props} /> : <CourseTable {...props} />}
         </div>
     )
 }

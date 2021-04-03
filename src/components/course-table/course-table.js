@@ -13,7 +13,7 @@ const CourseTable = ({ courses, deleteCourse, updateCourse }) => {
                     <div className="d-flex justify-content-end">
                         <i className="fa fa-folder mr-2"></i>
                         <i className="fas fa-sort-alpha-up mr-2"></i>
-                        <Link to="/grid">
+                        <Link to="/courses/grid">
                             <i className="fa fa-th"></i>
                         </Link>
                     </div>
