@@ -13,7 +13,7 @@ const reducer = combineReducers({ moduleReducer, lessonReducer, topicReducer })
 const store = createStore(reducer)
 
 const CourseEditor = () => {
-    const { courseId, layout, moduleId, lessonId } = useParams()
+    const { moduleId, lessonId } = useParams()
 
     return (
         <Provider store={store}>

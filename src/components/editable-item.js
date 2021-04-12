@@ -16,7 +16,7 @@ const EditableItem = ({ to, content, updateContent, deleteContent, className = '
                 <Fragment>
                     <input value={contentCache.title} onChange={(e) => { setContentCache({ ...contentCache, title: e.target.value }) }} />
                     <div>
-                        <i className="fa fa-check pr-2 text-primary" onClick={update}></i>
+                        <i className="fa fa-check pr-2 text-success" onClick={update}></i>
                         <i className="fa fa-times text-danger" onClick={() => deleteContent(contentCache)}></i>
                     </div>
                 </Fragment> :
