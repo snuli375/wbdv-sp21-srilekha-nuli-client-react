@@ -19,8 +19,8 @@ const ModuleList = ({ modules = [],
 
     return (
         <ul className="pl-0">
-            {modules.map((m, i) => (<li className={MODULE_CLASSES}>
-                <EditableItem key={i}
+            {modules.map((m, i) => (<li key={i} className={MODULE_CLASSES}>
+                <EditableItem
                     to={`/courses/${layout}/editor/${courseId}/modules/${m._id}`}
                     deleteContent={deleteModule}
                     updateContent={updateModule}

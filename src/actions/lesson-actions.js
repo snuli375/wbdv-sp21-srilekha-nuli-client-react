@@ -5,8 +5,8 @@ export const UPDATE_LESSON = "UPDATE_LESSON"
 export const DELETE_LESSON = "DELETE_LESSON"
 export const FIND_LESSONS_FOR_MODULE = "FIND_LESSONS_FOR_MODULE"
 
-export const createLesson = (dispatch, courseId) => {
-    lessonService.createLesson(courseId, { title: 'New Lesson' })
+export const createLesson = (dispatch, moduleId) => {
+    lessonService.createLesson(moduleId, { title: 'New Lesson' })
         .then(lesson => dispatch({ type: "CREATE_LESSON", lesson }))
 }
 
@@ -20,8 +20,8 @@ export const deleteLesson = (dispatch, lessonToDelete) => {
         .then(status => dispatch({ type: "DELETE_LESSON", lessonToDelete }))
 }
 
-export const findLessonsForModule = (dispatch, courseId) => {
-    lessonService.findLessonsForModule(courseId)
+export const findLessonsForModule = (dispatch, moduleId) => {
+    lessonService.findLessonsForModule(moduleId)
         .then(lessons => dispatch({
             type: "FIND_LESSONS_FOR_MODULE",
             lessons

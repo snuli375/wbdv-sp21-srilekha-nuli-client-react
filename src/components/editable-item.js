@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-const EditableItem = ({ to, content, updateContent, deleteContent }) => {
+const EditableItem = ({ to, content, updateContent, deleteContent, className = '' }) => {
     const [editable, setEditable] = useState(false)
     const [contentCache, setContentCache] = useState(content)
 
@@ -11,7 +11,7 @@ const EditableItem = ({ to, content, updateContent, deleteContent }) => {
     }
 
     return (
-        <div class="d-flex justify-content-between">
+        <div className={`d-flex justify-content-between ${className}`}>
             {editable ?
                 <Fragment>
                     <input value={contentCache.title} onChange={(e) => { setContentCache({ ...contentCache, title: e.target.value }) }} />

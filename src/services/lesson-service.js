@@ -14,7 +14,7 @@ export const createLesson = (moduleId, lesson) => {
         headers: {
             'content-type': 'application/json'
         },
-        body: JSON.stringify(module)
+        body: JSON.stringify(lesson)
     }).then(res => res.json())
 }
 
@@ -39,7 +39,7 @@ export const findLesson = (lessonId) => fetch(lessonUrl(lessonId), { method: 'GE
  * @returns 
  */
 export const updateLesson = (lessonId, lesson) => {
-    return fetch(lessonId(lessonUrl), {
+    return fetch(lessonUrl(lessonId), {
         method: 'PUT',
         headers: {
             'content-type': 'application/json'
@@ -53,7 +53,7 @@ export const updateLesson = (lessonId, lesson) => {
  * @param {*} lessonId 
  * @returns 
  */
-export const deleteLesson = (lessonId) => (moduleId) => fetch(lessonUrl(lessonId), { method: 'DELETE' }).then(res => res.json())
+export const deleteLesson = (lessonId) => fetch(lessonUrl(lessonId), { method: 'DELETE' }).then(res => res.json())
 
 const api = { createLesson, findLessonsForModule, findLesson, updateLesson, deleteLesson }
 export default api

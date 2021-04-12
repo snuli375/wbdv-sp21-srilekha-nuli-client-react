@@ -2,6 +2,7 @@ import { useHistory } from 'react-router-dom'
 import moduleReducer from "../../reducers/module-reducer";
 import lessonReducer from "../../reducers/lesson-reducer";
 import ModuleList from './module-list'
+import LessonTabs from './lesson-tabs'
 import { combineReducers, createStore } from "redux";
 import { Provider } from "react-redux";
 
@@ -66,21 +67,7 @@ const CourseEditor = () => {
                         </div>
                         <div className="col-9 pr-4">
                             <div className="mb-3 d-flex mt-2">
-                                <button className="font-weight-bold py-2 px-3 border-0 btn-secondary mr-2 text-light">
-                                    Topic 1
-                </button>
-                                <button className="font-weight-bold py-2 px-3 border-0 btn-dark mr-2 text-light">
-                                    Topic 2
-                </button>
-                                <button className="font-weight-bold py-2 px-3 border-0 btn-secondary mr-2 text-light">
-                                    Topic 3
-                </button>
-                                <button className="font-weight-bold py-2 px-3 border-0 btn-secondary mr-2 text-light">
-                                    Topic 4
-                </button>
-                                <button className="py-2 px-3 border-0 btn-secondary mr-2 text-light">
-                                    <i className="fa fa-plus text-light"></i>
-                                </button>
+                                <LessonTabs />
                             </div>
                             <div className="mb-3 d-flex align-items-baseline justify-content-end">
                                 <button className="btn btn-success btn-sm">Save</button>
