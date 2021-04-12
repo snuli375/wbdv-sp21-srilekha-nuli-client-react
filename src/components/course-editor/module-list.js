@@ -27,8 +27,11 @@ const ModuleList = ({ modules = [],
                     content={m} />
             </li>))}
             <li className={`text-center ${MODULE_CLASSES}`}>
-                <i onClick={() => createModule(courseId)}
-                    className="fa fa-plus fa-lg" aria-label="Add new module"></i>
+                <div>
+                    <i onClick={() => createModule(courseId)}
+                        className="fa fa-plus fa-lg" aria-label="Add new module"></i>
+                </div>
+
             </li>
         </ul>
     )

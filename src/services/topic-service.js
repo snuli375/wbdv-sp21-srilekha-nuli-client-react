@@ -39,7 +39,7 @@ export const findTopic = (topicId) => fetch(topicUrl(topicId), { method: 'GET' }
  * @returns 
  */
 export const updateTopic = (topicId, topic) => {
-    return fetch(topicId(topicUrl), {
+    return fetch(topicUrl(topicId), {
         method: 'PUT',
         headers: {
             'content-type': 'application/json'
@@ -53,7 +53,7 @@ export const updateTopic = (topicId, topic) => {
  * @param {*} topicId 
  * @returns 
  */
-export const deleteTopic = (topicId) => (lessonId) => fetch(topicUrl(topicId), { method: 'DELETE' }).then(res => res.json())
+export const deleteTopic = (topicId) => fetch(topicUrl(topicId), { method: 'DELETE' }).then(res => res.json())
 
 const api = { createTopic, findTopicsForLesson, findTopic, updateTopic, deleteTopic }
 export default api

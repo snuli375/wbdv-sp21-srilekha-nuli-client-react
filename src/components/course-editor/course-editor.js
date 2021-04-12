@@ -1,24 +1,26 @@
-import { useHistory } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import moduleReducer from "../../reducers/module-reducer";
 import lessonReducer from "../../reducers/lesson-reducer";
+import topicReducer from "../../reducers/topic-reducer";
 import ModuleList from './module-list'
 import LessonTabs from './lesson-tabs'
+import TopicPills from './topic-pills'
 import { combineReducers, createStore } from "redux";
 import { Provider } from "react-redux";
 
-const reducer = combineReducers({ moduleReducer, lessonReducer })
+const reducer = combineReducers({ moduleReducer, lessonReducer, topicReducer })
 
 const store = createStore(reducer)
 
 const CourseEditor = () => {
-    const history = useHistory()
+    const { courseId, layout, moduleId, lessonId } = useParams()
 
     return (
         <Provider store={store}>
             <div>
                 <nav className="navbar navbar-dark bg-dark navbar-expand-sm justify-content-between px-0">
                     <div className="navbar-brand col-3 font-weight-bold text-center">
-                        <i onClick={history.goBack} className="fa fa-chevron-left mr-4"></i>
+                        <i onClick={() => null} className="fa fa-chevron-left mr-4"></i>
                         <div className="d-inline-block">
                             Course Name
         </div>
@@ -66,9 +68,12 @@ const CourseEditor = () => {
                             <ModuleList />
                         </div>
                         <div className="col-9 pr-4">
-                            <div className="mb-3 d-flex mt-2">
+                            {moduleId && <div className="mb-3 d-flex mt-2">
                                 <LessonTabs />
-                            </div>
+                            </div>}
+                            {lessonId && <div className="mb-3 d-flex mt-2">
+                                <TopicPills />
+                            </div>}
                             <div className="mb-3 d-flex align-items-baseline justify-content-end">
                                 <button className="btn btn-success btn-sm">Save</button>
                                 <label className="mx-2">Preview</label>

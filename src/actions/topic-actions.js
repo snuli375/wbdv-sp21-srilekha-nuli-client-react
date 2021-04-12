@@ -20,8 +20,8 @@ export const deleteTopic = (dispatch, topicToDelete) => {
         .then(status => dispatch({ type: "DELETE_TOPIC", topicToDelete }))
 }
 
-export const findTopicsForLesson = (dispatch, courseId) => {
-    topicService.findTopicsForCourse(courseId)
+export const findTopicsForLesson = (dispatch, lessonId) => {
+    topicService.findTopicsForLesson(lessonId)
         .then(topics => dispatch({
             type: "FIND_TOPICS_FOR_LESSON",
             topics
