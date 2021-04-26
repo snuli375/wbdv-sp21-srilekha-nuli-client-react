@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom'
 import widgetActions from "../../actions/widget-actions";
 import HeadingWidget from './heading-widget'
 import ParagraphWidget from './paragraph-widget'
+import ImageWidget from './image-widget'
+
 
 const WidgetList = ({ widgets = [],
     createWidget,
@@ -60,20 +62,20 @@ const WidgetList = ({ widgets = [],
                                     editing={isEditing}
                                     widget={widgetToRender} />
                             }
-                            {/* 
+                            {/* {
                                 _widget.type === "LIST" &&
                                 <ListWidget
                                     setEditingWidget={setEditingWidget}
                                     editing={isEditing}
                                     widget={widgetToRender} />
-                            }
+                            } */}
                             {
                                 _widget.type === "IMAGE" &&
                                 <ImageWidget
                                     setEditingWidget={setEditingWidget}
                                     editing={isEditing}
                                     widget={widgetToRender} />
-                            } */}
+                            }
                         </li>)
                     }
                     )
