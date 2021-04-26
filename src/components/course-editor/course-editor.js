@@ -2,18 +2,20 @@ import { useParams } from 'react-router-dom'
 import moduleReducer from "../../reducers/module-reducer";
 import lessonReducer from "../../reducers/lesson-reducer";
 import topicReducer from "../../reducers/topic-reducer";
+import widgetReducer from "../../reducers/widget-reducer";
 import ModuleList from './module-list'
 import LessonTabs from './lesson-tabs'
 import TopicPills from './topic-pills'
+import WidgetList from '../widgets/widget-list'
 import { combineReducers, createStore } from "redux";
 import { Provider } from "react-redux";
 
-const reducer = combineReducers({ moduleReducer, lessonReducer, topicReducer })
+const reducer = combineReducers({ moduleReducer, lessonReducer, topicReducer, widgetReducer })
 
 const store = createStore(reducer)
 
 const CourseEditor = () => {
-    const { moduleId, lessonId } = useParams()
+    const { moduleId, lessonId, topicId } = useParams()
 
     return (
         <Provider store={store}>
@@ -73,6 +75,9 @@ const CourseEditor = () => {
                             </div>}
                             {lessonId && <div className="mb-3 d-flex mt-2">
                                 <TopicPills />
+                            </div>}
+                            {topicId && <div className="mb-3 d-flex mt-2">
+                                <WidgetList />
                             </div>}
                             <div className="mb-3 d-flex align-items-baseline justify-content-end">
                                 <button className="btn btn-success btn-sm">Save</button>
