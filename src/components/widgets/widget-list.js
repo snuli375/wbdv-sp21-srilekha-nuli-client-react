@@ -2,7 +2,8 @@ import { connect } from "react-redux";
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import widgetActions from "../../actions/widget-actions";
-import HeadingWidget from './HeadingWidget'
+import HeadingWidget from './heading-widget'
+import ParagraphWidget from './paragraph-widget'
 
 const WidgetList = ({ widgets = [],
     createWidget,
@@ -25,7 +26,7 @@ const WidgetList = ({ widgets = [],
     return (
         <div>
             <h2>Widget List</h2>
-            <i onClick={() => createWidget(topicId)} className="fas fa-plus float-right fa-2x"></i>
+            <i onClick={() => createWidget(topicId)} className="fas fa-plus float-right pl-4 fa-2x"></i>
             <ul className="list-group">
                 {
                     widgets.map(_widget => {
@@ -52,14 +53,14 @@ const WidgetList = ({ widgets = [],
                                     editing={isEditing}
                                     widget={widgetToRender} />
                             }
-                            {/* {
+                            {
                                 _widget.type === "PARAGRAPH" &&
                                 <ParagraphWidget
                                     setEditingWidget={setEditingWidget}
-                                    editing={_widget.id === widget.id}
+                                    editing={isEditing}
                                     widget={widgetToRender} />
                             }
-                            {
+                            {/* 
                                 _widget.type === "LIST" &&
                                 <ListWidget
                                     setEditingWidget={setEditingWidget}
