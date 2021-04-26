@@ -2,6 +2,7 @@ import types from './widget-types'
 
 
 const HeadingWidget = ({ widget, setEditingWidget, editing }) => {
+    console.log(types)
 
     const TagName = `h${widget.size}`
     return (
