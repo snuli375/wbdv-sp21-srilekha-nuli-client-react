@@ -1,2 +1,2 @@
-const types = ['Heading', 'Paragraph', 'Image']
+const types = ['Heading', 'Paragraph', 'Image', 'List']
 export default types

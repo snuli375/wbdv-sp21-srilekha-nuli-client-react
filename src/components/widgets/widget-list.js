@@ -5,6 +5,8 @@ import widgetActions from "../../actions/widget-actions";
 import HeadingWidget from './heading-widget'
 import ParagraphWidget from './paragraph-widget'
 import ImageWidget from './image-widget'
+import ListWidget from './list-widget'
+
 
 
 const WidgetList = ({ widgets = [],
@@ -51,6 +53,7 @@ const WidgetList = ({ widgets = [],
                             {
                                 _widget.type === "HEADING" &&
                                 <HeadingWidget
+                                key={widgetToRender.id}
                                     setEditingWidget={setEditingWidget}
                                     editing={isEditing}
                                     widget={widgetToRender} />
@@ -58,20 +61,23 @@ const WidgetList = ({ widgets = [],
                             {
                                 _widget.type === "PARAGRAPH" &&
                                 <ParagraphWidget
+                                key={widgetToRender.id}
                                     setEditingWidget={setEditingWidget}
                                     editing={isEditing}
                                     widget={widgetToRender} />
                             }
-                            {/* {
+                            {
                                 _widget.type === "LIST" &&
                                 <ListWidget
+                                key={widgetToRender.id}
                                     setEditingWidget={setEditingWidget}
                                     editing={isEditing}
                                     widget={widgetToRender} />
-                            } */}
+                            }
                             {
                                 _widget.type === "IMAGE" &&
                                 <ImageWidget
+                                key={widgetToRender.id}
                                     setEditingWidget={setEditingWidget}
                                     editing={isEditing}
                                     widget={widgetToRender} />
